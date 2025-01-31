@@ -33,6 +33,7 @@ export default [
         'warn',
         { allowConstantExport: true },
       ],
+      'react/no-unscaped-entities': "off",
     },
   },
 ]

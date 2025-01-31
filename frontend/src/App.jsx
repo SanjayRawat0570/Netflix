@@ -1,16 +1,20 @@
 
 import { Route , Routes } from 'react-router-dom';
-import Homepage from './pages/Homepage';
-import Loginpage from './pages/Loginpage';
-import Signuppage from './pages/Signuppage';
+import Homepage from './Pages/home/Home';
+import LoginPage from './Pages/Login';
+import Signup from './Pages/Signup';
+import Footer from './Components/Footer';
 
 function App() {
-  return  (
+  return  ( <>
     <Routes>
       <Route path="/" element={<Homepage />} />
-      <Routes path = "/login" element={<Loginpage />} />
-      <Routes path = "/signup" element={<Signuppage />} />
+      <Route path = "/login" element={<LoginPage />} />
+      <Route path = "/signup" element={<Signup />} />
       </Routes>
+        
+        <Footer />
+        </>
   )
 }
 
