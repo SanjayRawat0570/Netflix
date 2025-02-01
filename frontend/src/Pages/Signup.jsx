@@ -1,6 +1,7 @@
 import { useState } from "react";
 import {Link} from 'react-router-dom';
-import { useAuthStore } from "../store/authStore";
+import { useAuthStore } from "../Store/authUser";
+
 const Signup = () => {
     const { searchParams } = new URL(document.location);
 	const emailValue = searchParams.get("email");

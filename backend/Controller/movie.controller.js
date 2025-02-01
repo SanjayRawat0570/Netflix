@@ -7,7 +7,7 @@ export async function getTrendingMovie(req, res) {
             const randomMovie = data.results[Math.floor(Math.random() * data.results?.length)];
             res.json({
                 success: true,
-                movie: randomMovie,
+                content: randomMovie,
             });
 
         
