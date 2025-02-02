@@ -3,6 +3,7 @@ import { Route , Routes } from 'react-router-dom';
 import Homepage from './Pages/home/Home';
 import LoginPage from './Pages/Login';
 import Signup from './Pages/Signup';
+import WatchPage from './Pages/WatchPage';
 import Footer from './Components/Footer';
 import { Toaster } from 'react-hot-toast';
 import Loader from 'lucide-react';
@@ -31,6 +32,7 @@ function App() {
       <Route path = "/login" element={!user ? <LoginPage /> : <Navigate to ="/" />} />
 
       <Route path = "/signup" element={!user ?<Signup /> :<Navigate to= {"/"} />  } />
+      <Route path ='/watch/:id' elementlement = {user ? <WatchPage />> : <Naviate to={"/"}/>}/>
       </Routes>
       <Footer/>
        <Toaster />
