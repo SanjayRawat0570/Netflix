@@ -9,5 +9,5 @@ import { BrowserRouter } from 'react-router-dom';
     <BrowserRouter>
       <App />
     </BrowserRouter>
-  </React.StrictMode>
+   </React.StrictMode>
  );

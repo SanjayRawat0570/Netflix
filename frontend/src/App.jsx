@@ -12,6 +12,7 @@ import { Navigate } from 'react-router-dom';
 import SearchPage from './Pages/SearchPage';
 import SearchHistoryPage from './Pages/SearchHistoryPage';
 import { useAuthStore } from './Store/authUser';
+import NotFoundPage from './Pages/NotFoundPage';
 
 
 function App() {
@@ -39,7 +40,7 @@ function App() {
 
       <Route path ='/search/:id' elementlement = {user ? <SearchPage /> : <Navigate to={"/login"}/>}/> 
       <Route path = '/history' element={user ? <SearchHistoryPage /> : <Navigate to={"/login"} />} />
-
+     <Route path='/*' element= {<NotFoundPage/>} />
       </Routes>
       <Footer/>
        <Toaster />

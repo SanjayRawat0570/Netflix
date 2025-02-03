@@ -8,7 +8,7 @@ export const generateTokenAnssetcookie = (userId, res)=>{
     httpOnly: true,
     sameSite : "strict",
     secure: ENV_VARS.NODE_ENV !=="development"
-   })
+   });
    return token;
 
-}
+};

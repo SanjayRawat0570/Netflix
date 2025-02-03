@@ -5,8 +5,9 @@ import tvRoutes from "./routes/tv.routes.js";
 import { ENV_VARS } from './Config/envVars.js';
 import { connectDB } from './Config/db.js';
 import cookieParser from 'cookie-parser';
-import { protectRoute } from './middleware/ProtectRoutes.js';
+
 import searchRoutes from './routes/search.routes.js';
+import { protectRoute } from './middleware/ProtectRoutes.js';
 const app = express();
 
 const PORT = ENV_VARS.PORT;
