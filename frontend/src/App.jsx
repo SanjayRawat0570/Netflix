@@ -6,13 +6,13 @@ import Signup from './Pages/Signup';
 import WatchPage from './Pages/WatchPage';
 import Footer from './Components/Footer';
 import { Toaster } from 'react-hot-toast';
-import Loader from 'lucide-react';
+import {Loader} from "lucide-react";
 import { useEffect } from 'react';
 import { Navigate } from 'react-router-dom';
 import SearchPage from './Pages/SearchPage';
 import SearchHistoryPage from './Pages/SearchHistoryPage';
 import { useAuthStore } from './Store/authUser';
-import NotFoundPage from './Pages/NotFoundPage';
+import NotFoundPage from './Pages/404';
 
 
 function App() {

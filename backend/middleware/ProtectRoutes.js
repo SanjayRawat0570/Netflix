@@ -1,7 +1,7 @@
 import jwt from 'jsonwebtoken';
 
 import { ENV_VARS } from '../Config/envVars.js';
-import {User} from '../models/user.model.js';
+import { User } from '../Models/user.js';
 export const protectRoute = async (req, res, next) => {
     try{
     const token = req.cookies["jwt-netflix"]

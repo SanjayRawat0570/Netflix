@@ -1,7 +1,8 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import { useAuthStore } from "../store/authStore";
-import { useContentStore} from "../store/contentStore";
+
+import  {useAuthStore } from "../Store/authUser";
+import { useContentStore } from "../Store/content";
 const Navbar = () => {
     const [isMobile, setIsMobile] = useState(false);
     const { user, logout } = useAuthStore();

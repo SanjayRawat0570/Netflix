@@ -7,7 +7,7 @@ import { connectDB } from './Config/db.js';
 import cookieParser from 'cookie-parser';
 
 import searchRoutes from './routes/search.routes.js';
-import { protectRoute } from './middleware/ProtectRoutes.js';
+import { protectRoute } from './Middleware/ProtectRoutes.js';
 const app = express();
 
 const PORT = ENV_VARS.PORT;
