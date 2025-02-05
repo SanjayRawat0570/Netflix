@@ -30,10 +30,10 @@ export const useAuthStore = create((set) => ({
 		}
 	},
 	logout: async () => {
-		set({ isLoggingOut: true });
+		set({ isLoggingout: true });
 		try {
 			await axios.post("/api/v1/auth/logout");
-			set({ user: null, isLoggingOut: false });
+			set({ user: null, isLoggingout: false });
 			toast.success("Logged out successfully");
 		} catch (error) {
 			set({ isLoggingOut: false });
@@ -43,10 +43,11 @@ export const useAuthStore = create((set) => ({
 	authCheck: async () => {
 		set({ isCheckingAuth: true });
 		try {
-			const response = await axios.get("/api/v1/auth/authCheck");
+			const response = await axios.get("/api/v1/auth/authcheck");
 
 			set({ user: response.data.user, isCheckingAuth: false });
 		} catch (error) {
+			console.log(error);
 			set({ isCheckingAuth: false, user: null });
 			
 		}

@@ -1,8 +1,9 @@
 
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import { useAuthStore } from "../store/authUser";
+ import { useAuthStore } from "../Store/authUser";
 
+ 
 const LoginPage = () => {
 	const [email, setEmail] = useState("");
 	const [password, setPassword] = useState("");
@@ -65,7 +66,7 @@ const LoginPage = () => {
 						</button>
 					</form>
 					<div className='text-center text-gray-400'>
-						Don't have an account?{" "}
+						Dont have an account?{" "}
 						<Link to={"/signup"} className='text-red-500 hover:underline'>
 							Sign Up
 						</Link>

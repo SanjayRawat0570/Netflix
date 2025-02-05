@@ -1,6 +1,8 @@
 import bcryptjs from 'bcryptjs';
 import { User } from '../Models/user.js';
+import { generateTokenAndSetCookie } from '../utils/generateToken.js';
 export async function signup(req, res) {
+    console.log(req.body)
     try {
         const { email, password, username } = req.body;
         if (!email || !password || !username) {
@@ -14,7 +16,7 @@ export async function signup(req, res) {
         if (password.length < 6) {
             return res.status(400).json({ success: false, message: 'Password must be at least 6 characters' });
         }
-        const existingUserByEmail = await User.findOne({ email });
+        const existingUserByEmail = await User.findOne({ email: email });
         if (existingUserByEmail) {
             return res.status(400).json({ success: false, message: 'User with this email already exists' });
         }
@@ -36,7 +38,7 @@ export async function signup(req, res) {
             image,
         });
         if (newUser) {
-            generateTOkenAndSetCookie(newUser._id, res);
+            generateTokenAndSetCookie(newUser._id, res);
             await newUser.save();
             res.status(201).json({
                 success: true,
@@ -69,7 +71,7 @@ export async function login(req, res) {
         return res.status(400).json({ success: false, message: 'Invalid credentials' });
     }
     
-    generateTOkenAndSetCookie(user._id, res);
+    generateTokenAndSetCookie(user._id, res);
 
     res.status(200).json({ success: true, user: { ...user._doc, password: "" }
      });
@@ -92,10 +94,13 @@ export async function logout(req, res) {
 }
 
 export async function authCheck(req, res) {
+    console.log(req.user)
+
     try{
+        
         res.status(200).json({ success: true, user:req.user });
     } catch(error){
-     console.log("Error in authCheck controller", error.message);
+     
         res.status(500).json({ success: false, message: 'Internal server error here' });
     }
 }

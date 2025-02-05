@@ -24,7 +24,7 @@ export async function searchPerson(req, res) {
 
 		res.status(200).json({ success: true, content: response.results });
 	} catch (error) {
-		console.log("Error in searchPerson controller: ", error.message);
+	
 		res.status(500).json({ success: false, message: "Internal Server Error" });
 	}
 }
@@ -61,7 +61,7 @@ export async function searchTv(req, res) {
 	const { query } = req.params;
 
 	try {
-		const response = await fetchFromTMDBfetch('https://api.themoviedb.org/3/trending/tv/week?language=en-US', options)
+		const response = await fetchFromTMDB('https://api.themoviedb.org/3/trending/tv/week?language=en-US', options)
 
 		if (response.results.length === 0) {
 			return res.status(404).send(null);
@@ -107,7 +107,7 @@ export async function removeItemFromSearchHistory(req, res) {
 
 		res.status(200).json({ success: true, message: "Item removed from search history" });
 	} catch (error) {
-		console.log("Error in removeItemFromSearchHistory controller: ", error.message);
+		
 		res.status(500).json({ success: false, message: "Internal Server Error" });
 	}
 }
