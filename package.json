@@ -15,11 +15,13 @@
   "dependencies": {
     "axios": "^1.7.9",
     "bcryptjs": "^2.4.3",
+    "build": "^0.1.4",
     "cookie-parser": "^1.4.7",
     "dotenv": "^16.4.7",
     "express": "^4.21.2",
     "jsonwebtoken": "^9.0.2",
-    "mongoose": "^8.9.5"
+    "mongoose": "^8.9.5",
+    "node": "^23.7.0"
   },
   "devDependencies": {
     "cross-env": "^7.0.3",
