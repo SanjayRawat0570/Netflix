@@ -11,7 +11,7 @@ const Footer = () => {
 					>
 						you
 					</a>
-					. The source code is available on{" "}
+					. The source code is available on my{" "}
 					<a
 						href='https://github.com/SanjayRawat0570/Netflix'
 						target='_blank'
