@@ -16,7 +16,7 @@ const NotFoundPage = () => {
 				<p className='mb-6 text-xl'>
                 Sorry, we can not  find that page. You all find lots to explore on the home page.
 				</p>
-				<Link to={"/"} className='bg-whit text-black py-2 px-4 rounded'>
+				<Link to={"/"} className='bg-white text-black py-2 px-4 rounded'>
 					Netflix Home
 				</Link>
 			</main>
